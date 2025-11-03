@@ -1,0 +1,6 @@
+# This file tells dbt which paths to ignore when running dbt commands
+
+target/
+dbt_packages/
+logs/
+

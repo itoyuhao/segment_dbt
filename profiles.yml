@@ -1,0 +1,14 @@
+jkopay__bigquery_data:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      project: "{{ env_var('DBT_PROFILE_PROJECT', 'jkopay-sit-data') }}"
+      location: asia-east1
+      method: service-account
+      keyfile: "{{ env_var('DBT_PROFILE_KEYFILE', '.secret/gcp/svc-data-pipeline-dev.json') }}"
+      dataset: "{{ env_var('DBT_PROFILE_DATASET', 'data_temp') }}"
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      priority: interactive
+      threads: "{{ env_var('DBT_PROFILE_THREADS', '8') | int }}"

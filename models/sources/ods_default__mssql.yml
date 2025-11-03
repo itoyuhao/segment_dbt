@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: default__mssql
+    tags: ['example', 'mssql']
+    schema: "ods_default__mssql{{ env_var('SOURCE_DATASET_SUFFIX', '') }}"
+    tables:
+      - name: example_tab2
+        identifier: "example_tab2__{{ var('source_table_type') }}"

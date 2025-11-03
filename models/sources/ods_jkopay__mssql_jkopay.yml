@@ -1,0 +1,211 @@
+version: 2
+
+sources:
+  - name: jkopay__mssql_jkopay
+    tags: ['jkopay', 'mssql']
+    schema: "ods_jkopay__mssql_jkopay{{ env_var('SOURCE_DATASET_SUFFIX', '') }}"
+
+    tables:
+      # Prefix: A
+      - name: account
+        identifier: "account__{{ var('source_table_type') }}"
+      - name: account_condition_record
+        identifier: "account_condition_record__{{ var('source_table_type') }}"
+      - name: account_cooperation_setting
+        identifier: "account_cooperation_setting__{{ var('source_table_type') }}"
+      - name: account_link_register
+        identifier: "account_link_register__{{ var('source_table_type') }}"
+      - name: account_receipt
+        identifier: "account_receipt__{{ var('source_table_type') }}"
+      - name: account_risk_info
+        identifier: "account_risk_info__{{ var('source_table_type') }}"
+      - name: account_trans_extend
+        identifier: "account_trans_extend__{{ var('source_table_type') }}"
+      - name: account_trans_record
+        identifier: "account_trans_record__{{ var('source_table_type') }}"
+      - name: ad
+        identifier: "ad__{{ var('source_table_type') }}"
+      - name: ad_target_map
+        identifier: "ad_target_map__{{ var('source_table_type') }}"
+      - name: auto_deposit_record
+        identifier: "auto_deposit_record__{{ var('source_table_type') }}"
+
+      # Prefix: B
+      - name: balance_adjustment
+        identifier: "balance_adjustment__{{ var('source_table_type') }}"
+      - name: bank_account
+        identifier: "bank_account__{{ var('source_table_type') }}"
+      - name: bank_account_record
+        identifier: "bank_account_record__{{ var('source_table_type') }}"
+      - name: bank_card_bins
+        identifier: "bank_card_bins__{{ var('source_table_type') }}"
+      - name: brand_main
+        identifier: "brand_main__{{ var('source_table_type') }}"
+      - name: brand_main_record
+        identifier: "brand_main_record__{{ var('source_table_type') }}"
+      - name: brand_store_map
+        identifier: "brand_store_map__{{ var('source_table_type') }}"
+
+      #Prefix: C
+      - name: cash_on_delivery_refund_record
+        identifier: "cash_on_delivery_refund_record__{{ var('source_table_type') }}"
+      - name: co_branded_card_bin
+        identifier: "co_branded_card_bin__{{ var('source_table_type') }}"
+      - name: co_branded_credit_card_list
+        identifier: "co_branded_credit_card_list__{{ var('source_table_type') }}"
+      - name: co_branded_holder
+        identifier: "co_branded_holder__{{ var('source_table_type') }}"
+      - name: code_data
+        identifier: "code_data__{{ var('source_table_type') }}"
+      - name: coin_history
+        identifier: "coin_history__{{ var('source_table_type') }}"
+      - name: coin_history_extend
+        identifier: "coin_history_extend__{{ var('source_table_type') }}"
+      - name: company
+        identifier: "company__{{ var('source_table_type') }}"
+      - name: company_extend_data
+        identifier: "company_extend_data__{{ var('source_table_type') }}"
+      - name: credit_card_deposit_main
+        identifier: "credit_card_deposit_main__{{ var('source_table_type') }}"
+      - name: credit_card_setting
+        identifier: "credit_card_setting__{{ var('source_table_type') }}"
+
+      # Prefix: D
+      - name: deposit_main
+        identifier: "deposit_main__{{ var('source_table_type') }}"
+      - name: direct_pay_main
+        identifier: "direct_pay_main__{{ var('source_table_type') }}"
+      - name: draw_main
+        identifier: "draw_main__{{ var('source_table_type') }}"
+      
+      # Prefix: E
+      - name: epps_remit_main
+        identifier: "epps_remit_main__{{ var('source_table_type') }}"
+      - name: external_id_map
+        identifier: "external_id_map__{{ var('source_table_type') }}"
+      
+      # Prefix: F
+      - name: fisc_financial_response_history
+        identifier: "fisc_financial_response_history__{{ var('source_table_type') }}"
+      - name: fisc_twqr_store
+        identifier: "fisc_twqr_store__{{ var('source_table_type') }}"
+
+      # Prefix: H
+      - name: hashtags
+        identifier: "hashtags__{{ var('source_table_type') }}"
+      - name: hashtags_merchant_map
+        identifier: "hashtags_merchant_map__{{ var('source_table_type') }}"
+      - name: hashtags_person_map
+        identifier: "hashtags_person_map__{{ var('source_table_type') }}"
+      - name: hashtags_store_map
+        identifier: "hashtags_store_map__{{ var('source_table_type') }}"
+
+      # Prefix: I
+      - name: institution
+        identifier: "institution__{{ var('source_table_type') }}"
+      - name: institution_financial_verification_history
+        identifier: "institution_financial_verification_history__{{ var('source_table_type') }}"
+      - name: invoice_item_map
+        identifier: "invoice_item_map__{{ var('source_table_type') }}"
+      
+      # Prefix: J
+      - name: jko_dep_account_open_date
+        identifier: "jko_dep_account_open_date__{{ var('source_table_type') }}"
+      - name: jko_identity_id_map
+        identifier: "jko_identity_id_map__{{ var('source_table_type') }}"
+
+      # Prefix: M
+      - name: member_phone_record
+        identifier: "member_phone_record__{{ var('source_table_type') }}"
+      
+      # Prefix: O
+      - name: online_store
+        identifier: "online_store__{{ var('source_table_type') }}"
+
+      # Prefix: P
+      - name: pay_tool_default_setting
+        identifier: "pay_tool_default_setting__{{ var('source_table_type') }}"
+      - name: payment_record
+        identifier: "payment_record__{{ var('source_table_type') }}"
+      - name: person
+        identifier: "person__{{ var('source_table_type') }}"
+      - name: person_block_amount_history
+        identifier: "person_block_amount_history__{{ var('source_table_type') }}"
+      - name: person_extend_data
+        identifier: "person_extend_data__{{ var('source_table_type') }}"
+      - name: person_verify_data
+        identifier: "person_verify_data__{{ var('source_table_type') }}"
+      - name: platform
+        identifier: "platform__{{ var('source_table_type') }}"
+      - name: platform_unrealized_amount
+        identifier: "platform_unrealized_amount__{{ var('source_table_type') }}"
+      - name: purchase_fee
+        identifier: "purchase_fee__{{ var('source_table_type') }}"
+      - name: purchase_main
+        identifier: "purchase_main__{{ var('source_table_type') }}"
+      - name: purchase_main_cross_border_extend
+        identifier: "purchase_main_cross_border_extend__{{ var('source_table_type') }}"
+      - name: purchase_main_extend
+        identifier: "purchase_main_extend__{{ var('source_table_type') }}"
+      - name: purchase_surplus
+        identifier: "purchase_surplus__{{ var('source_table_type') }}"
+
+      # Prefix: R
+      - name: refund_main
+        identifier: "refund_main__{{ var('source_table_type') }}"
+      - name: reimburse_invoice
+        identifier: "reimburse_invoice__{{ var('source_table_type') }}"
+      - name: reimburse_main
+        identifier: "reimburse_main__{{ var('source_table_type') }}"
+      - name: remit_main
+        identifier: "remit_main__{{ var('source_table_type') }}"
+      
+      # Prefix: S
+      - name: service_fee_record
+        identifier: "service_fee_record__{{ var('source_table_type') }}"
+      - name: service_fee_store_rule
+        identifier: "service_fee_store_rule__{{ var('source_table_type') }}"
+      - name: store
+        identifier: "store__{{ var('source_table_type') }}" 
+      - name: store_cooperation_setting
+        identifier: "store_cooperation_setting__{{ var('source_table_type') }}"
+      - name: store_outbound_contract_type_map
+        identifier: "store_outbound_contract_type_map__{{ var('source_table_type') }}"
+      - name: store_outbound_service_type_map
+        identifier: "store_outbound_service_type_map__{{ var('source_table_type') }}"
+      - name: store_pay_tool_detail
+        identifier: "store_pay_tool_detail__{{ var('source_table_type') }}"
+      - name: store_pay_tool_main
+        identifier: "store_pay_tool_main__{{ var('source_table_type') }}"
+      - name: store_pay_tool_map
+        identifier: "store_pay_tool_map__{{ var('source_table_type') }}"
+      - name: store_to_acquiring_bank_mid
+        identifier: "store_to_acquiring_bank_mid__{{ var('source_table_type') }}"
+      - name: store_twqr_setting
+        identifier: "store_twqr_setting__{{ var('source_table_type') }}"
+      - name: store_twqr_setting_history
+        identifier: "store_twqr_setting_history__{{ var('source_table_type') }}"
+      - name: system_user
+        identifier: "system_user__{{ var('source_table_type') }}"
+      - name: sub_cooperation_setting
+        identifier: "sub_cooperation_setting__{{ var('source_table_type') }}"
+    
+      # Prefix: T
+      - name: tagged_bank_account
+        identifier: "tagged_bank_account__{{ var('source_table_type') }}"
+      - name: tagged_bank_account_record
+        identifier: "tagged_bank_account_record__{{ var('source_table_type') }}"
+      - name: tai_shin_family_req
+        identifier: "tai_shin_family_req__{{ var('source_table_type') }}"
+      - name: tai_shin_seven_eleven_req
+        identifier: "tai_shin_seven_eleven_req__{{ var('source_table_type') }}"
+      - name: twqr_declare_store
+        identifier: "twqr_declare_store__{{ var('source_table_type') }}"
+      - name: twqr_pos_record_extend
+        identifier: "twqr_pos_record_extend__{{ var('source_table_type') }}"
+      - name: twqr_purchase_record
+        identifier: "twqr_purchase_record__{{ var('source_table_type') }}"
+      - name: twqr_reconcile_detail
+        identifier: "twqr_reconcile_detail__{{ var('source_table_type') }}"
+      - name: twqr_support_e_payment
+        identifier: "twqr_support_e_payment__{{ var('source_table_type') }}"

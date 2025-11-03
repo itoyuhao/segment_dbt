@@ -1,0 +1,54 @@
+name: 'jkopay__bigquery_data'
+version: '1.0.0'
+config-version: 2
+
+profile: 'jkopay__bigquery_data'
+
+flags:
+  send_anonymous_usage_stats: false
+  use_colors: true
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# directories to be removed by `dbt clean`
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  data_interval_start: "{{ (run_started_at - modules.datetime.timedelta(days=1)).isoformat() }}"
+  data_interval_end: "{{ run_started_at.isoformat() }}"
+  source_table_type: "log"
+
+# Doc: https://docs.getdbt.com/docs/configuring-models
+models:
+  jkopay__bigquery_data:
+    +on_schema_change: fail
+    +persist_docs:
+      relation: true
+      columns: true
+
+    bronze:
+      +schema: data_bronze
+      +materialized: table
+      +tags: bronze
+      +on_schema_change: append_new_columns
+
+    silver:
+      +schema: data_silver
+      +materialized: view
+      +tags: silver
+      +contract:
+        enforced: true
+
+    gold:
+      +schema: data_gold
+      +materialized: table
+      +tags: gold
+      +contract:
+        enforced: true
