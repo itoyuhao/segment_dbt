@@ -18,7 +18,7 @@ resource "segment_destination_subscription" "id-68edeb19ac35add292e9f716_trga1oz
       "@path" = "$.context.consent"
     }
     engage_space = "IHhUjns8vZoMQv5MH7MrAbtwdPZJyVwl"
-    event_name   = "Order Completed"
+    event_name   = "Order completed"
     message_id = {
       "@path" = "$.messageId"
     }
