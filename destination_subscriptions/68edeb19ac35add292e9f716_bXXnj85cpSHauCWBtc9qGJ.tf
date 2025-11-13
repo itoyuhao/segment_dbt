@@ -25,14 +25,14 @@ resource "segment_destination_subscription" "id-68edeb19ac35add292e9f716_bXXnj85
       "@path" = "$.receivedAt"
     }
     traits = {
-      帳號建立時間 = {
+      create_time = {
         "@path" = "$.properties.create_time"
       }
-      街口帳號 = {
-        "@path" = "$.properties.jkos_account"
-      }
-      "街口金科 ID" = {
+      jkos_id = {
         "@path" = "$.properties.jkosid"
+      }
+      jkosaccount = {
+        "@path" = "$.properties.jkos_account"
       }
     }
     user_id = {
