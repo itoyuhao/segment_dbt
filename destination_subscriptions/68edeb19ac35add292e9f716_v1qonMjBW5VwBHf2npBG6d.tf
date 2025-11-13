@@ -23,6 +23,9 @@ resource "segment_destination_subscription" "id-68edeb19ac35add292e9f716_v1qonMj
       "@path" = "$.messageId"
     }
     properties = {
+      category = {
+        "@path" = "$.properties.category"
+      }
       pay_amount = {
         "@path" = "$.properties.pay_amount"
       }
