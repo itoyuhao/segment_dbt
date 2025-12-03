@@ -10,8 +10,12 @@ resource "segment_destination_subscription" "id-68edeb19ac35add292e9f716_v1qonMj
   model_id       = "pLcc3mUBhtbo8ncQ1xazfm"
   name           = "txn_detail_mapping"
   reverse_etl_schedule = {
-    config   = null
-    strategy = "MANUAL"
+    config = jsonencode({
+      days     = [2]
+      hours    = [5]
+      timezone = "Asia/Taipei"
+    })
+    strategy = "SPECIFIC_DAYS"
   }
   settings = jsonencode({
     consent = {
